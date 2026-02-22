@@ -69,8 +69,8 @@ if st.button("ふる 🎲", use_container_width=True):
     st.session_state.dice = final
 
     # 少し大きく表示
-    show(final, "73vmin")
+    show(final, "53vmin")
     time.sleep(0.10)
 
     # 通常サイズに戻す（落ち着き）
-    show(final, "70vmin")
+    show(final, "50vmin")
