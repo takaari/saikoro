@@ -23,7 +23,7 @@ if "dice" not in st.session_state:
 
 display = st.empty()
 
-def show(face):
+def show(face, size="50vmin"):
     display.markdown(
         f"""
         <div style="
@@ -41,7 +41,7 @@ def show(face):
                 display:flex;
                 justify-content:center;
                 align-items:center;
-                font-size:50vmin;
+                font-size:{size};
                 line-height:1;
                 box-shadow:0 10px 25px rgba(0,0,0,0.25);
             ">
