@@ -4,34 +4,39 @@ import time
 
 st.set_page_config(page_title="Dice", page_icon="🎲")
 
+# タイトル最小限
 st.markdown(
-    "<h1 style='text-align:center;'>🎲 Dice Roller 🎲</h1>",
+    "<h3 style='text-align:center; margin-bottom:0;'>🎲 Dice 🎲</h3>",
     unsafe_allow_html=True
 )
 
+# セッション初期化
 if "dice" not in st.session_state:
-    st.session_state.dice = None
+    st.session_state.dice = "⚀"
 
-st.divider()
+dice_faces = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"]
 
+# 表示エリア（画面の大部分を使う）
 display = st.empty()
 
-if st.session_state.dice:
-    display.markdown(
-        f"<div style='font-size:120px; text-align:center;'>"
-        f"{st.session_state.dice}"
-        f"</div>",
-        unsafe_allow_html=True
-    )
-else:
-    display.markdown(
-        "<div style='font-size:60px; text-align:center; color:gray;'>？</div>",
-        unsafe_allow_html=True
-    )
+display.markdown(
+    f"""
+    <div style="
+        font-size:40vw;
+        text-align:center;
+        line-height:1;
+        margin-top:5vh;
+        margin-bottom:5vh;
+    ">
+        {st.session_state.dice}
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
-st.divider()
-
-if st.button("サイコロをふる 🎲", use_container_width=True):
+# ボタン（下に大きく）
+if st.button("ふる 🎲", use_container_width=True):
     with st.spinner("ころころころ…"):
-        time.sleep(0.5)
-    st.session_state.dice = random.randint(1, 6)
+        time.sleep(0.4)
+    st.session_state.dice = random.choice(dice_faces)
+    st.rerun()
