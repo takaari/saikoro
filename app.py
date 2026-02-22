@@ -23,26 +23,27 @@ if "dice" not in st.session_state:
 
 display = st.empty()
 
-def show(face, size="40vw"):
+def show(face):
     display.markdown(
         f"""
         <div style="
             display:flex;
             justify-content:center;
             align-items:center;
-            margin-top:10vh;
-            margin-bottom:10vh;
+            margin-top:8vh;
+            margin-bottom:8vh;
         ">
             <div style="
-                width:21vw;
-                height:21vw;
+                width:70vmin;
+                height:70vmin;
                 background:white;
-                border-radius:5%;
+                border-radius:18%;
                 display:flex;
                 justify-content:center;
                 align-items:center;
-                font-size:{size};
-                box-shadow:0 8px 20px rgba(0,0,0,0.25);
+                font-size:50vmin;
+                line-height:1;
+                box-shadow:0 10px 25px rgba(0,0,0,0.25);
             ">
                 {face}
             </div>
@@ -50,7 +51,6 @@ def show(face, size="40vw"):
         """,
         unsafe_allow_html=True
     )
-
 # 現在表示
 show(st.session_state.dice)
 
