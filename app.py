@@ -57,7 +57,7 @@ show(st.session_state.dice)
 if st.button("ふる 🎲", use_container_width=True):
 
     # コロコロ演出
-    delays = [0.08, 0.08, 0.1, 0.12, 0.15, 0.2]
+    delays = [0.08, 0.08, 0.1, 0.12, 0.15, 0.3]
 
     for d in delays:
         face = random.choice(dice_faces)
@@ -69,8 +69,8 @@ if st.button("ふる 🎲", use_container_width=True):
     st.session_state.dice = final
 
     # 少し大きく表示
-    show(final, "48vw")
-    time.sleep(0.25)
+    show(final, "45vw")
+    time.sleep(0.15)
 
     # 通常サイズに戻す（落ち着き）
     show(final, "40vw")
