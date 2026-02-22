@@ -34,8 +34,8 @@ def show(face, size="40vw"):
             margin-bottom:10vh;
         ">
             <div style="
-                width:23vw;
-                height:23vw;
+                width:21vw;
+                height:21vw;
                 background:white;
                 border-radius:5%;
                 display:flex;
