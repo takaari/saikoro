@@ -61,7 +61,7 @@ if st.button("ふる 🎲", use_container_width=True):
 
     for d in delays:
         face = random.choice(dice_faces)
-        show(face, "70vmin")
+        show(face, "50vmin")
         time.sleep(d)
 
     # ===== 最終決定 =====
