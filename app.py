@@ -27,13 +27,25 @@ def show(face, size="40vw"):
     display.markdown(
         f"""
         <div style="
-            font-size:{size};
-            text-align:center;
-            line-height:1;
+            display:flex;
+            justify-content:center;
+            align-items:center;
             margin-top:10vh;
             margin-bottom:10vh;
         ">
-            {face}
+            <div style="
+                width:60vw;
+                height:60vw;
+                background:white;
+                border-radius:20%;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                font-size:{size};
+                box-shadow:0 8px 20px rgba(0,0,0,0.25);
+            ">
+                {face}
+            </div>
         </div>
         """,
         unsafe_allow_html=True
